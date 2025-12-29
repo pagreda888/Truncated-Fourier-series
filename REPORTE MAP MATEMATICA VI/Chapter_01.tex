@@ -1,0 +1,214 @@
+\chapter{Descripción General}
+\label{ch:intro}
+
+\section{Series de Fourier}
+\label{ch:concid}
+Las series de Fourer describen señales periódicas como la combinación de señales/funciones armónicas. 
+El objetivo y la practica de estas series, es describir dichas señales en una suma de funciones trigonométricas de senos y cosenos, con destinas frecuencias con múltiplos de la "frecuencia fundamental".
+
+Serie de Fourier trigonométrica: 
+\begin{equation}
+    f(t) = a_{0} + \sum_{n=1}^{\infty}\left(a_{n}\cos{\left(nw_{n}t\right)}+b_{n}\sin{\left(nw_{n}t\right)}\right)
+    \label{eq:sumFour}
+\end{equation}
+
+Coeficientes de Fourier:
+
+\begin{equation}
+\begin{split}
+    a_{0}=\frac{1}{2L}\int_{-L}^{L} f(t)\, dt \\
+    a_{n}=\frac{1}{L}\int_{-L}^{L} f(t)\cos(n\omega_{n}t)\, dt \\
+    b_{n}=\frac{1}{L}\int_{-L}^{L} f(t) \sin(n\omega_{n}t)\, dt
+\end{split}
+\label{eq:coefFour}
+\end{equation}
+
+\section{Serie de fourier truncada a 2N + 1 términos:}
+\label{ch:concid}
+Al querer aproximar una función periódica $f(t)$ la cual es continua por partes y posee infinitos armónicos, tendremos que truncar la función
+hasta el armónico N de forma tal que el error sea el mínimo establecido. 
+
+La forma de calcular la energıa de la señal:
+
+\begin{equation}
+    E_{f}=\int_{-L}^{L} f^2(t)\, dt
+  \label{eq:ex2a}
+\end{equation}
+
+\section{Integral cuadrada del error (ICE)}
+\label{ch:concid}
+El calculo de ICE se utiliza para encontrar el valor N que luego será utilizado para obtener una representación de la Sumatorio de Fourier Truncada.
+
+Serie de Fourier trigonométrica: 
+\begin{equation}
+    \begin{split}
+    ICE(N) = E_{f}- \left\{a^2_{0}T+\frac{T}{2}\sum_{n=1}^{N}\left(a^2_{n}+b^2_{n} \right)\right\}\\
+    ICE(N)\leq 0.02E_{f}
+    \end{split}
+    \label{eq:sumFour}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{PARTE PRACTICA}
+\label{ch:modeloMat}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% SUBSECTION NAME
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Interfaz de Usuario}
+\label{ch:deduccion1}
+La interfaz de usuario, se basa en un sistema tipo consola, breve instrucción te uso: 
+\begin{itemize}
+    \item Ingreso de funciones(Ingreso recursivo):
+        \begin{enumerate}
+        \item Ingreso de Función/Definición de Función a trozos + ENTER.
+        \end{enumerate}
+    \item Ingreso de Rango de Operación de Función Ingresada(Ingreso recursivo):
+        \begin{enumerate}
+        \item Inicio de rango + ENTER.
+        \item Fin de rango + ENTER.
+        \end{enumerate}
+    \item Despliegue de resultados, se podra visualizar .
+    \item Al Finalizar en Ingreso de la Función a Trozos, PRESIONAR ENTER, cuando la consola solicite ingreso de nueva función.
+    \item Tomar en cuenta las indicaciones de uso en listadas en la interfaz de usuario.
+    
+\end{itemize}
+%(Eq 1. \ref{eq:ex1a}  Eq 1. \ref{eq:ex1b}).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Helicoide central
+\subsection{FUNCIÓN A) }
+
+\begin{equation}
+    f(t) =
+    \begin{cases}
+    0 & \text{si } -2 < t < -1 \\
+    1 & \text{si } -1 < t < 1 \\
+    0 & \text{si } 1 < t < 2
+    \end{cases}
+\end{equation}
+
+Ingreso de función: 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width = 0.9\textwidth]{Figuras/Ingreso F1.jpg}
+    \caption[Ingreso de la Función A).]%
+    {Se puede percibir el ingreso de función y la secuencia a seguir para el ingreso.} 
+    \label{fig:img1a}
+\end{figure}
+
+Resultados de la Funcion: 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width = 1\textwidth]{Figuras/Resultados Ingreso F1.jpg}
+    \caption[Ingreso de la Función A).]%
+    {Se puede percibir el despliegue de resultados para la sumatoria de Fourier para dicha función.} 
+    \label{fig:img2a}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width = 1\textwidth]{Figuras/Grafica Ingreso F1.jpg}
+    \caption[Ingreso de la Función A).]%
+    {Se puede percibir la gráfica resultante de la Función A.} 
+    \label{fig:img3a}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width = 0.9\textwidth]{Figuras/ANS BNS Ingreso F1.jpg}
+    \caption[Ingreso de la Función A).]%
+    {Resultados de los ANs y BNs para la funcion A)} 
+    \label{fig:img4a}
+\end{figure}
+
+\hfill
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CILINDRO CENTRAL
+
+\subsection{FUNCIÓN B)}
+\begin{equation}
+    f(t) =
+        \begin{cases}
+        0 & \text{si } -2 < t < -1 \\
+        t + 2 & \text{si } -1 < t < 1 \\
+        0 & \text{si } 1 < t < 2
+        \end{cases}
+\end{equation}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width = 0.9\textwidth]{Figuras/Ingreso F2.jpg}
+    \caption[Ingreso de la Función B).]%
+    {Se puede percibir el ingreso de la función B)} 
+    \label{fig:img2a}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width = 0.9\textwidth]{Figuras/Resultados Ingreso F2.jpg}
+    \caption[Ingreso de la Función B).]%
+    {Resultados de los ANs y BNs para la función B)} 
+    \label{fig:img2b}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width = 1\textwidth]{Figuras/Grafica Ingreso F2.jpg}
+    \caption[Ingreso de la Función B).]%
+    {Se puede percibir la gráfica resultante de la Función B.} 
+    \label{fig:img2c}
+\end{figure}
+
+\hfill
+
+\chapter{DESARROLLO DE CODIGO}
+\label{ch:Resultados}
+
+\section{Función ICE}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width = 1\textwidth]{Figuras/FUNCION ICE.jpg}
+    \caption[EJECUCIÓN.]%
+    {Código Python para el algoritmo del calculo de la función ICE.} 
+    \label{fig:cod1}
+\end{figure}
+
+\section{FUNCIÓN PARA EL INGRESO DEL USUARIO Y REINICIO DE VARIABLES}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width = 1\textwidth]{Figuras/Input y reinicio.jpg}
+    \caption[EJECUCIÓN.]%
+    {Menú de ingreso del usuario, y Matrices utilizadas para el almacenamiento de datos.} 
+    \label{fig:cod2}
+\end{figure}
+
+\section{FUNCIÓN PARA EL CALCULO DE ENERGÍA}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width = 1\textwidth]{Figuras/Calculo de Energia.jpg}
+    \caption[OUTPUT.]%
+    {En este caso utilizamos hacemos uso de la matriz de ingreso de la función, para el calculo de la energía.} 
+    \label{fig:cod3}
+\end{figure}
+
+\section{CALCULO COEFICIENTES DE FOURIER Y FUNCIÓN PARA GRAFICAR}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width = 1\textwidth]{Figuras/COEFICIENTES DE FOURIER.jpg}
+    \caption[OUTPUT.]%
+    {Se aprecia el calculo de los coeficientes de Fourier, A0, AN Y BN, al mismo tiempo el desarrollo de la función trigonométrica de Fourier.} 
+    \label{fig:cod3}
+\end{figure}
+
+
+\newpage
+\chapter{ENLACE DE PROYECTO}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width = 0.95\textwidth]{Figuras/CODIGOQR.png}
+    \caption[ENLACE DE PROYECTO (2)]%
+    {ENLACE DE PROYECTO EN EL \href{https://drive.google.com/drive/folders/1jUVlJLyLqmCDVATNPLQzYZXY89hcIUcN?usp=sharing}{LINK}.} 
+    \label{fig:QRCODE}
+\end{figure}
+
+\paragraph{ACLARACIONES \\}
+DENTRO DEL ENLACE ENCUENTRA EL DESARROLLO DEL CÓDIGO DE PROGRAMACIÓN PARA LECTURA Y EJECUCIÓN EN PYTHON, EL CÓDIGO DE LATEX DEL REPORTE Y EL PDF DEL REPORTE. 
